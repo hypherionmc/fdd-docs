@@ -1,20 +1,20 @@
 input: .
 output: .retype
-url: fdd-docs.com
+url: sdlink.fdd-docs.com
 branding:
-  title: First Dark Dev
-  label: Docs
+  title: Simple Discord Link
+  label: Wiki
 links:
   - text: Discord
     link: https://discord.gg/PdVnXf9
   - text: Website
     link: https://firstdarkdev.xyz
   - text: Github
-    link: https://github.com/hypherionmc/fdd-docs
+    link: https://github.com/hypherionmc/sdlink
 footer:
   copyright: "&copy; {{ year }} First Dark Development. All rights reserved."
 meta:
-  title: " | First Dark Development Docs"
+  title: " | Simple Discord Link Wiki"
 search:
   placeholder: Search
 snippets:
@@ -23,4 +23,4 @@ snippets:
     - json
 edit:
   repo: "https://github.com/hypherionmc/fdd-docs"
-  branch: master
+  branch: sdlink

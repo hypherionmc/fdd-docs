@@ -17,6 +17,8 @@ This mod allows you to:
 
 * Relay your Minecraft server chat to Discord
 * Relay your Discord chat (in a pre-configured channel) to Minecraft
+* Relay your Server Console to Discord (Once server has started, 2.1 and above)
+* Execute Minecraft Commands in Discord (Since 2.1)
 * Let players whitelist/unwhitelist themselves directly from Discord (Admins and persons with KICK perms can unwhitelist anyone)
 * View active players on the server inside of discord
 * And, much more to come

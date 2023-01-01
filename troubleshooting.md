@@ -1,5 +1,5 @@
 ---
-order: e
+order: f
 ---
 
 In some cases, the bot may not work as intended. Before Version 1.4.0, you would need to manually check everything to figure out why it doesn't work.

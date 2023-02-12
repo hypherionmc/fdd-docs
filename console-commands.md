@@ -54,3 +54,24 @@ On the text command, everything after `saymc` will be passed to the `%args%` var
     discordCommand = "stopmc"
     discordRole = "MacOS"
 ```
+
+### Example with two commands configured
+
+
+```json
+#Execute Minecraft commands in Discord
+[linkedCommands]
+#Should linked commands be enabled
+enabled = true
+
+#Commands to be linked
+[[linkedCommands.commands]]
+    mcCommand = "say %args%"
+    discordCommand = "saymc"
+    discordRole = ""
+
+[[linkedCommands.commands]]
+    mcCommand = "stop"
+    discordCommand = "stopmc"
+    discordRole = "MacOS"
+```

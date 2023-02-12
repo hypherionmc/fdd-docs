@@ -115,56 +115,81 @@ You can now also configure another webhook to use as the for Log messages. If th
 ### The default, un-configured config file contents
 
 ```
+
 #General Mod Config
 [general]
-	#The Token of the Bot to use. KEEP THIS PRIVATE
-	botToken = ""
 	#Should the bot be enabled or not
 	enabled = true
 	#Should debug logging be enabled? WARNING: THIS CAN SPAM YOUR LOG!
 	debugging = false
-	#How quickly the bot status should update
-	activityUpdateInterval = 30
-	#The prefix to use for bot commands. Example: ~players
-	botPrefix = "~"
 	#Should the bot be allowed to whitelist/un-whitelist players. Whitelisting needs to be enabled on your server as well
-	whitelisting = true
+	whitelisting = false
+	#Should the bot be allowed to whitelist/un-whitelist players in OFFLINE mode. Whitelisting needs to be enabled on your server as well
+	offlinewhitelist = false
+	#Automatically link Minecraft and Discord Accounts when a user is whitelisted
+	linkedWhitelist = false
 	#Should only admins be allowed to whitelist players
 	onlyAdminsWhitelist = false
-	#Do not add Playing. A status to display on the bot. You can use %players% and %maxplayers% to show the number of players on the server
-	botStatus = "Minecraft"
-	#A topic for the Chat Relay channel. You can use %player%, %maxplayers%, %uptime%, %tps% or just leave it empty.
-	channelTopic = "Playing Minecraft with %players%/%maxplayers% people | Uptime: %uptime%"
+	#If a role name is defined here, it will be assigned to players when they are whitelisted
+	autoWhitelistRole = ""
+	#If a role name is defined here, it will be assigned to players when their MC and Discord accounts are linked
+	linkedRole = ""
+	#Should the /discord command be enabled in game
+	inviteCommandEnabled = false
 	#Discord Invite Link used by the in-game invite command
 	inviteLink = ""
 	#Internal version control. DO NOT TOUCH!
-	configVersion = 10
+	configVersion = 23
+
+#Config specific to the discord bot
+[botConfig]
+	#The Token of the Bot to use. KEEP THIS PRIVATE. See https://readme.firstdarkdev.xyz/simple-discord-link/initial-setup/ to find this
+	botToken = ""
+	#How quickly the bot status should update
+	activityUpdateInterval = 30
+	#If defined, only this role can use Staff Functions. Otherwise, it defaults back to admin/kick perms
+	staffRole = ""
+	#Should the bot use / commands. NOTE: THIS MAY TAKE UP TO 24 HOURS TO SHOW UP IN YOUR DISCORD
+	slashCommands = false
+	#The prefix to use for bot commands. Example: ~players. THIS HAS NO EFFECT WHEN USING SLASH COMMANDS
+	botPrefix = "~"
+	#Do not add Playing. A status to display on the bot. You can use %players% and %maxplayers% to show the number of players on the server
+	botStatus = "Minecraft"
+	#The type of the status displayed on the bot. Valid entries are: PLAYING, STREAMING, WATCHING, LISTENING
+	botStatusType = "PLAYING"
+	#Should the bot update the topic of your chat channel automatically
+	doTopicUpdates = true
+	#A topic for the Chat Relay channel. You can use %player%, %maxplayers%, %uptime% or just leave it empty.
+	channelTopic = "Playing Minecraft with %players%/%maxplayers% people | Uptime: %uptime%"
+
+#Config relating to the discord channels to use with the mod
+[channels]
+	#The ID of the channel to post in and relay messages from. This is still needed, even in webhook mode
+	chatChannelID = 0
+	#If this ID is set, event messages will be posted in this channel instead of the chat channel
+	eventsChannelID = 0
+	#If this ID is set, console messages sent after the bot started will be relayed here, and you can execute minecraft commands here
+	consoleChannelID = 0
 
 #Webhook Config
-[webhookConfig]
+[webhooks]
 	#Should webhook messages be used
 	enabled = false
 	#The URL of the channel webhook to use for Chat Messages
-	webhookurl = ""
-	#The URL of the channel webhook to use for Server Messages Messages
-	webhookurlLogs = ""
+	chatWebhook = ""
+	#The URL of the channel webhook to use for Server Messages
+	eventsWebhook = ""
+	#The URL of the channel webhook to use for Console Messages
+	consoleWebhook = ""
 	#A DIRECT link to an image to use as the avatar for server messages. Also used for embeds
 	serverAvatar = ""
 	#The name to display for Server messages when using Webhooks
 	serverName = "Minecraft Server"
 
 #Chat Config
-[chatConfig]
-	#The ID of the channel to post in and relay messages from. This is still needed, even in webhook mode
-	channelID = 0
-	#If this ID is set, event messages will be posted in this channel instead of the chat channel
-	logChannelID = 0
+[chat]
 	#The type of image to use as the player icon in messages. Valid entries are: AVATAR, HEAD, BODY, COMBO
-	playerAvatarType = "COMBO"
-	#Should embeds be used instead of plain text messages for Chat Messages
-	useEmbeds = true
-	#Should embeds be used instead of plain text messages for Log Messages
-	useEmbedsLog = true
+	playerAvatarType = "HEAD"
 	#Prefix to add to Minecraft when a message is relayed from Discord. Supports MC formatting. Use %user% for the Discord Username
 	mcPrefix = "§e[Discord]§r %user%: "
 	#Should messages from bots be relayed
@@ -189,40 +214,98 @@ You can now also configure another webhook to use as the for Log messages. If th
 	sendSayCommand = true
 	#Should commands be posted to discord
 	broadcastCommands = true
-	#Should Tell Raw messages be posted
-	sendTellRaw = true
-	#Should the ~discord command be enabled
-	inviteCommandEnabled = false
+	#Commands that should not be broadcasted to discord
+	ignoredCommands = ["particle", "login"]
 
 #Change the contents of certain event messages
 [messages]
+	#Convert Discord to MC, and MC to Discord Formatting
+	formatting = true
+	#Should console messages be sent to the Console Channel
+	sendConsoleMessages = true
 	#Server Starting Message
-	serverStarting = "Server is starting..."
+	serverStarting = "*Server is starting...*"
 	#Server Started Message
-	serverStarted = "Server has started. Enjoy!"
+	serverStarted = "*Server has started. Enjoy!*"
 	#Server Stopping Message
-	serverStopping = "Server is stopping..."
+	serverStopping = "*Server is stopping...*"
 	#Server Stopped Message
-	serverStopped = "Server has stopped..."
+	serverStopped = "*Server has stopped...*"
 	#Player Joined Message. Use %player% to display the player name
-	playerJoined = "%player% has joined the server!"
+	playerJoined = "*%player% has joined the server!*"
 	#Player Left Message. Use %player% to display the player name
-	playerLeft = "%player% has left the server!"
+	playerLeft = "*%player% has left the server!*"
 	#Achievement Messages. Available variables: %player%, %title%, %description%
-	achievements = "%player% has made the advancement [%title%]: %description%"
+	achievements = "*%player% has made the advancement [%title%]: %description%*"
 	#Chat Messages. Available variables: %player%, %message%
 	chat = "%message%"
+	#Command Messages. Available variables: %player%, %command%
+	commands = "%player% **executed command: %command%**"
+	#Should messages sent with TellRaw be sent to discord as a chat? (Experimental)
+	relayTellRaw = true
+	#Should the entire command executed be relayed to discord, or only the name of the command
+	relayFullCommands = false
 	#The message to show when someone uses /discord command. You can use %inviteurl%
 	inviteMessage = "Hey, check out our discord server here -> %inviteurl%"
 
 #Change in which channel messages appear
 [messageDestinations]
-	#Should Server Starting/Started/Stopping/Stopped Messages be in chat. If false, it will appear in the log channel
-	statusInChat = false
-	#Should Join/Leave Messages be in chat. If false, it will appear in the log channel
-	joinLeaveInChat = false
-	#Should Advancement Messages be in chat. If false, it will appear in the log channel
-	advancementsInChat = false
-	#Should Death messages be in chat. If false, it will appear in the log channel
-	deathInChat = false
+
+	#Control where CHAT messages are delivered
+	[messageDestinations.chat]
+		#The Channel the message will be delivered to. Valid entries are CHAT, EVENT, CONSOLE
+		channel = "CHAT"
+		#Should the message be sent using EMBED style messages
+		useEmbed = false
+
+	#Control where START/STOP messages are delivered
+	[messageDestinations.startStop]
+		#The Channel the message will be delivered to. Valid entries are CHAT, EVENT, CONSOLE
+		channel = "EVENT"
+		#Should the message be sent using EMBED style messages
+		useEmbed = false
+
+	#Control where JOIN/LEAVE messages are delivered
+	[messageDestinations.joinLeave]
+		#The Channel the message will be delivered to. Valid entries are CHAT, EVENT, CONSOLE
+		channel = "EVENT"
+		#Should the message be sent using EMBED style messages
+		useEmbed = false
+
+	#Control where ADVANCEMENT messages are delivered
+	[messageDestinations.advancements]
+		#The Channel the message will be delivered to. Valid entries are CHAT, EVENT, CONSOLE
+		channel = "EVENT"
+		#Should the message be sent using EMBED style messages
+		useEmbed = false
+
+	#Control where DEATH messages are delivered
+	[messageDestinations.death]
+		#The Channel the message will be delivered to. Valid entries are CHAT, EVENT, CONSOLE
+		channel = "EVENT"
+		#Should the message be sent using EMBED style messages
+		useEmbed = false
+
+	#Control where COMMAND messages are delivered
+	[messageDestinations.commands]
+		#The Channel the message will be delivered to. Valid entries are CHAT, EVENT, CONSOLE
+		channel = "EVENT"
+		#Should the message be sent using EMBED style messages
+		useEmbed = false
+
+#Enable or Disable certain bot commands
+[botCommands]
+	#Allow members to link their MC and Discord accounts
+	accountLinking = true
+	#Enable/Disable the Player List command
+	allowPlayerList = true
+	#Enable/Disable the Server Status command
+	allowServerStatus = true
+
+#Execute Minecraft commands in Discord
+[linkedCommands]
+	#Should linked commands be enabled
+	enabled = false
+	#Commands to be linked
+	commands = []
 ```

@@ -45,6 +45,10 @@ KEEP THIS TOKEN PRIVATE AT ALL TIMES! If someone gets hold of this token, they c
 &nbsp;
 
 ### Part 3 - Bot Permissions and Inviting the bot
+!!!danger DO NOT SKIP THE STEP BELOW
+If you do, your bot will fail to start!
+!!!
+
 &nbsp;  
 On the same page where you found the Bot Token, scroll down until you see `Privileged Gateway Intents`. Enable all 3 of them
 ![Bot Intent Screen](https://cdn.firstdarkdev.xyz/docs/sdlink/bot/bot-7.png)

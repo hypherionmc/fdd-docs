@@ -3,7 +3,7 @@ title: Publish to a Single Platform
 order: c
 ---
 
-The plugin includes for tasks. `publishMod`, `publishCurseforge`, `publishGitHub`, `publishModrinth` and can be found under the `publishing` section of the gradle tasks.
+The plugin includes four tasks. `publishMod`, `publishCurseforge`, `publishGitHub`, `publishModrinth` and can be found under the `publishing` section of the gradle tasks.
 
 If you only want to publish to a single platform when you have multiple platforms enabled (for example when one platform fails), just execute the single task for that platform.
 

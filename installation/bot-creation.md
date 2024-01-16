@@ -38,15 +38,9 @@ The Bot can't have "Discord" in the name, and it uses the Application name as th
 
 ## Configuring the Bot (**Bot** Section)
 
-### Build-A-Bot
-
-In the **Build-A-Bot** Section click "Reset Token" to generate a private token. This is how SDLink knows which bot to send the commands to. Make a note of the token. once you leave this page, you won't be able to see it and will have to reset it again.
-<br>![](https://cdn.firstdark.dev/docs/sdlink-wiki/bot1.png)
-
-!!!danger DO NOT SHARE THE BOT TOKEN
-It's important that you don't share this bot token with anyone. It is essentially the password for your bot. If the token is leaked anyone can use it for their own program and will have access to your Discord server.
-This token will also be encrypted in the config file after you launch the server for the first time
-!!!
+:::warning
+Before we continue we need to make sure the Intents are properly enabled. **These are required for the bot to function.**
+:::
 
 ### Authorization Flow
 
@@ -57,6 +51,16 @@ Disable the "PUBLIC BOT" flag. This will ensure that only YOU can add the bot to
 
 Ensure all options in "Privileged Gateway Intents" are checked. These are needed for the bot to function.
 <br>![](https://cdn.firstdark.dev/docs/sdlink-wiki/bot6.png)
+
+### Build-A-Bot
+
+In the **Build-A-Bot** Section click "Reset Token" to generate a private token. This is how SDLink knows which bot to send the commands to. Make a note of the token. once you leave this page, you won't be able to see it and will have to reset it again.
+<br>![](https://cdn.firstdark.dev/docs/sdlink-wiki/bot1.png)
+
+!!!danger DO NOT SHARE THE BOT TOKEN
+It's important that you don't share this bot token with anyone. It is essentially the password for your bot. If the token is leaked anyone can use it for their own program and will have access to your Discord server.
+This token will also be encrypted in the config file after you launch the server for the first time
+!!!
 
 ## OAuth2 URL Generator
 

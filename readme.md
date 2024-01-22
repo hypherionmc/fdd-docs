@@ -115,12 +115,24 @@ publisher {
     // Disable the built in Fractureizer scanner
     setDisableMalwareScanner(true)
 
+    // Add supported java versions. Currently only used by CurseForge
+    setJavaVersions("Java 8", "Java 11")
+
     // Safety check to check if the artifact contains a valid mod metadata entry,
     // which could possibly mean that the jar is empty
     setDisableEmptyJarCheck(true)
 
     // Additional files to upload. Same as artifact, this can be a task, file or string
     addAdditionalFile(jar, secondJar)
+
+    // Additional files to upload with a custom display name and changelog.
+    // Currently only supported on Curseforge
+    addAdditionalFile {
+        // File, Task or String
+        artifact jar
+        displayName "Some Name"
+        changelog "Hello Changelog"
+    }
 }
 ```
 
@@ -235,13 +247,25 @@ publisher {
 
     // Disable the built in Fractureizer scanner
     disableMalwareScanner.set(true)
+
+    // Add supported java versions. Currently only used by CurseForge
+    setJavaVersions("Java 8", "Java 11")
     
     // Safety check to check if the artifact contains a valid mod metadata entry,
     // which could possibly mean that the jar is empty
     disableEmptyJarCheck.set(true)
     
     // Additional files to upload. Same as artifact, this can be a task, file or string
-    additionalFiles.set(listOf(tasks.jar))
+    additionalFiles(tasks.jar)
+
+    // Additional files to upload with a custom display name and changelog.
+    // Currently supports CurseForge only
+    addAdditionalFile {
+        // File, Task or String
+        artifact(tasks.jar)
+        displayName("Test Name")
+        changelog("Some Changelog")
+    }
 }
 ```
 +++

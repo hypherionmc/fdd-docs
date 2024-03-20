@@ -1,6 +1,10 @@
 ---
 order: g
 ---
+!!!info
+These docs are for SDLink V2 and older. For SDLink V3 beta, please see the [NEW DOCS HERE](https://sdlinkbeta.fdd-docs.com)
+!!!
+
 
 In some cases, the bot may not work as intended. Before Version 1.4.0, you would need to manually check everything to figure out why it doesn't work.
 

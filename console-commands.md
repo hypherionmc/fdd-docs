@@ -2,6 +2,10 @@
 title: Console Channel & Commands
 order: e
 ---
+!!!info
+These docs are for SDLink V2 and older. For SDLink V3 beta, please see the [NEW DOCS HERE](https://sdlinkbeta.fdd-docs.com)
+!!!
+
 
 ## Adding a Console Channel
 

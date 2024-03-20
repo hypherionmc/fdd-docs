@@ -2,6 +2,11 @@
 icon: home
 title: Welcome
 ---
+!!!info
+These docs are for SDLink V2 and older. For SDLink V3 beta, please see the [NEW DOCS HERE](https://sdlinkbeta.fdd-docs.com)
+!!!
+
+
 ![](https://cdn.firstdarkdev.xyz/docs/sdlink/simple-discord-link.png)
 
 [![](https://img.shields.io/badge/Spigot/Bukkit-Download%20Here-yellow.svg)](https://dev.bukkit.org/projects/simple-discord-link-bot-forge-fabric-spigot) [![](https://img.shields.io/badge/Forge/Fabric-Download%20Here-yellow.svg)](https://www.curseforge.com/minecraft/mc-mods/simple-discord-link-bot-forge-fabric-spigot/) [![](https://img.shields.io/badge/Jenkins-Development%20Builds-red.svg)](https://ci.hypherionmc.me/job/Simple%20Discord%20Link/) [![](https://img.shields.io/badge/Discord-Hypherion%20Development-blue.svg)](https://discord.gg/PdVnXf9)

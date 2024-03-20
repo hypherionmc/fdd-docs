@@ -2,6 +2,10 @@
 title: Role Assignment
 order: f
 ---
+!!!info
+These docs are for SDLink V2 and older. For SDLink V3 beta, please see the [NEW DOCS HERE](https://sdlinkbeta.fdd-docs.com)
+!!!
+
 
 !!!warning
 For Role assignments to work, you will need to update the bot permissions. Either manually give your bot the `Manage Roles` permission, or visit the Invite URL given in the log in your browser, to update the permissions.

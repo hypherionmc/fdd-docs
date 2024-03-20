@@ -2,6 +2,10 @@
 title: Creating the Discord Bot
 order: a
 ---
+!!!info
+These docs are for SDLink V2 and older. For SDLink V3 beta, please see the [NEW DOCS HERE](https://sdlinkbeta.fdd-docs.com)
+!!!
+
 
 In order for this mod to work, you need to create a "Discord Bot" application. Without it, the mod will not work. If you have already used a discord chat mod in the past, you can skip this section
 

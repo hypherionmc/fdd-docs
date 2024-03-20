@@ -2,6 +2,10 @@
 order: b
 title: Configuring the Mod
 ---
+!!!info
+These docs are for SDLink V2 and older. For SDLink V3 beta, please see the [NEW DOCS HERE](https://sdlinkbeta.fdd-docs.com)
+!!!
+
 
 +++ Requirements 
 Before you can configure the mod, you need:

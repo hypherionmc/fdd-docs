@@ -1,6 +1,10 @@
 ---
 order: d
 ---
+!!!info
+These docs are for SDLink V2 and older. For SDLink V3 beta, please see the [NEW DOCS HERE](https://sdlinkbeta.fdd-docs.com)
+!!!
+
 
 Minecraft commands are in-game commands added by the mod.
 

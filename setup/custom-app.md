@@ -1,32 +1,21 @@
 ---
 title: Customizing the Name & Images
-order: b
+order: c
 ---
 
 !!! warning
 Optional Step. Only required if you want to use your own name.
 !!!
-!!! info
-Since Simple RPC 3.2.0, you can use multiple images in an RPC section.
-
-This means that `smallImageKey = ["imagekey"]` becomes `smallImageKey = ["imagekey", "imagekey2"]`
-
-These images will then be selected at random
-!!!
 
 ||| Overview
-By default, the mod uses "Minecraft" as the app name along with the minecraft icons as for the images. **If this is all you want, you can skip this step**.
+By default, the mod uses "Stardew Valley" as the app name along with the stardew icons as for the images. **If this is all you want, you can skip this step**.
 
-If you want to use your own name, such as "My Cool Modpack", then this guide will help you create and setup a new discord app to use with the mod
-|||
+If you want to use your own name, such as "My Cool Modpack", then this guide will help you create and set up a new discord app to use with the mod
 
-||| Notices
-!!! info
-You can find and download the default assets used by the mod at the end of this page
-!!!
 !!! danger
 After uploading your assets, your assets may appear empty or not show up on discord at all. This is normal, and it will show up after a couple of minutes
 !!!
+
 !!! info
 **By the end of this guide you should:**
 * Have a custom discord app set up
@@ -78,21 +67,4 @@ Now also remember to replace all `smallImageKey` and `largeImageKey` values with
 |||
 
 &nbsp;  
-There you go. You should now have your custom app setup and ready for use. Next, check out How to configure the config to make use of your app
-&nbsp;
-
----
-
-## Default Assets and Their Purpose
-&nbsp;
-You can [!button Download](https://cdn.firstdarkdev.xyz/docs/srpc/rpcicons.zip) the set of icons used by the default app. You don't need to use all of them! Below is a list of the main images used by the app. The rest of the icons in the set are for things like launcher integration and known servers.
-The names of the images in the set are the image keys you can use
-
-| Image | Image Key | Purpose | 
-| --- | --- | --- |
-| ![mclogo](https://cdn.discordapp.com/app-assets/762726289341677668/762727693144948777.png) | mclogo | Used pre 2.3 for the Large and Small Images |
-| ![mclogonew](https://cdn.discordapp.com/app-assets/762726289341677668/873132898226683905.png) | mclogonew | Used by 2.3+ for the Large and Small Images |
-| ![overwold](https://cdn.discordapp.com/app-assets/762726289341677668/817148572079751188.png) | overworld | Used by the Dimension Override for Overworld as the large image |
-| ![nether](https://cdn.discordapp.com/app-assets/762726289341677668/817148553617080390.png) | nether | Used by the Dimension Override for The Nether as the large image |
-| ![end](https://cdn.discordapp.com/app-assets/762726289341677668/817148546993881088.png) | end | Used by the Dimension Override for The End as the large image |
-
+There you go. You should now have your custom app setup and ready for use.

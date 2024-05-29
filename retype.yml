@@ -1,14 +1,14 @@
 input: .
 output: .retype
-url: srpc.fdd-docs.com
+url: rpc-stardew.fdd-docs.com
 branding:
   title: Simple RPC
-  label: Docs
+  label: Stardew
 links:
   - text: Discord
-    link: https://discord.gg/PdVnXf9
+    link: https://discord.firstdark.dev
   - text: Website
-    link: https://firstdarkdev.xyz
+    link: https://firstdark.dev
   - text: Github
     link: https://github.com/hypherionmc/simple-rpc-public
 footer:
@@ -23,4 +23,4 @@ snippets:
     - json
 edit:
   repo: "https://github.com/hypherionmc/fdd-docs"
-  branch: srpc
+  branch: rpc-stardew

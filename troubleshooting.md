@@ -28,9 +28,4 @@ Make sure you are NOT running discord in administrator mode. Doing so will cause
 
 SNAP versions of discord do NOT support RPC's. Make sure you do not have the SNAP version installed
 
-
-&nbsp;
-
-### This mod crashes my game!
-
-This section only applies to versions before 1.3. A crash would occur if you have an error in your config file or if something went wrong while communicating with discord.
+If you use the FLATPAK version, there is a [fix](https://github.com/flathub/com.discordapp.Discord/wiki/Rich-Precense-(discord-rpc)) available [here](https://github.com/flathub/com.discordapp.Discord/wiki/Rich-Precense-(discord-rpc))

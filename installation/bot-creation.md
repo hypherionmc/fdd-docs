@@ -5,6 +5,11 @@ order: a
 
 # SDLink Discord Bot Setup
 
+## Video Guide
+[!embed](https://iframe.mediadelivery.net/embed/281161/860cfd79-c2fc-4da7-9713-85ac0767376a?autoplay=false&loop=false&muted=false&preload=true&responsive=true)
+
+---
+
 ## Enable Developer Mode
 
 Although optional, it helps to enable "developer mode" before you add a bot

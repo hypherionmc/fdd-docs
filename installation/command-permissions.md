@@ -3,6 +3,11 @@ title: Slash Command Permissions
 order: g
 ---
 
+## Video Guide
+[!embed](https://iframe.mediadelivery.net/embed/281161/358d7487-0923-436e-92cb-9dfebec33534?autoplay=false&loop=false&muted=false&preload=true&responsive=true)
+
+---
+
 Most bots typically use an "admin" or "manager" rol to control access to bot commands and features.
 
 SDLink instead integrates with the Discord Integration Command Permissions system, so you have full control over how slash commands are used, and made available to other users.

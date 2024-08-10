@@ -3,6 +3,11 @@ title: Linked Commands
 order: a
 ---
 
+## Video Guide
+[!embed](https://iframe.mediadelivery.net/embed/281161/0d1e1b6f-48b4-407e-af4b-df29d38d548c?autoplay=false&loop=false&muted=false&preload=true&responsive=true)
+
+---
+
 Simple Discord Link allows you to execute Minecraft commands, directly in Discord without having to use the server console.
 
 To use this feature, find the `minecraftCommands` section, near the bottom of your config file. By default, it would look like this:

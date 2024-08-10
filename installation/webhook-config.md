@@ -5,6 +5,11 @@ order: f
 
 # Webhook Setup
 
+## Video Guide
+[!embed](https://iframe.mediadelivery.net/embed/281161/740f240c-1387-444a-a340-43c9ef6b43aa?autoplay=false&loop=false&muted=false&preload=true&responsive=true)
+
+---
+
 In order to use the webhook messages, you need to add a webhook integration to the channel you want the messages to go to.
 
 !!! Webhook vs Embeds

@@ -5,6 +5,11 @@ order: c
 
 # SDLink Basic Mod Setup
 
+## Video Guide
+[!embed](https://iframe.mediadelivery.net/embed/281161/24fa14aa-a2d3-4ccd-84e9-ad0543d83106?autoplay=false&loop=false&muted=false&preload=true&responsive=true)
+
+---
+
 This will go through the basics of getting the mod installed with bot status and chat features  
 
 :::note

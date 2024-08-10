@@ -8,6 +8,7 @@ The following is a list of mods we include official compatibility for. Mods not 
 
 * [Simple Chat Fork](https://modrinth.com/mod/simplechatfork/)
 * [Beautified Chat (Server)](https://modrinth.com/mod/beautified-chat-server)
+* [StyledChat](https://modrinth.com/mod/styled-chat)
 
 ### Other Mods
 

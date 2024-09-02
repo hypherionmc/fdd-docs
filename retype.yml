@@ -6,9 +6,9 @@ branding:
   label: Wiki
 links:
   - text: Discord
-    link: https://discord.gg/PdVnXf9
+    link: https://discord.firstdark.dev
   - text: Website
-    link: https://firstdarkdev.xyz
+    link: https://firstdark.dev
   - text: Github
     link: https://github.com/hypherionmc/maintenancemode
 footer:

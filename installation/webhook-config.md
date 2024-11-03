@@ -5,6 +5,10 @@ order: f
 
 # Webhook Setup
 
+!!!warning Online Config Editor
+You can edit your config files, using our online config editor at https://editor.firstdark.dev. Alternatively, use the `sdconfigeditor` command in your console to edit your config live on the server, using the web interface.
+!!!
+
 ## Video Guide
 [!embed](https://iframe.mediadelivery.net/embed/281161/740f240c-1387-444a-a340-43c9ef6b43aa?autoplay=false&loop=false&muted=false&preload=true&responsive=true)
 

@@ -3,6 +3,10 @@ title: Mention users from Minecraft
 order: f
 ---
 
+!!!warning Online Config Editor
+You can edit your config files, using our online config editor at https://editor.firstdark.dev. Alternatively, use the `sdconfigeditor` command in your console to edit your config live on the server, using the web interface.
+!!!
+
 Simple Discord Link allows you to mention discord users, roles and channels from Minecraft, when the mod is installed client side as well.
 
 For this to work, you need to have `allowMentions` set to `true` in your config file on the server.

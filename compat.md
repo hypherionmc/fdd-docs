@@ -15,6 +15,7 @@ The following is a list of mods we include official compatibility for. Mods not 
 * [Vanish (Fabric)](https://modrinth.com/mod/vanish)
 * [Vanish Mod (Forge)](https://modrinth.com/mod/vanishmod)
 * [Fabric Tailor](https://modrinth.com/mod/fabrictailor)
+* [Maintenance Mode](https://modrinth.com/mod/maintenancemode)
 
 ### Additional Supported Features
 

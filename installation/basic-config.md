@@ -5,6 +5,10 @@ order: c
 
 # SDLink Basic Mod Setup
 
+!!!warning Online Config Editor
+You can edit your config files, using our online config editor at https://editor.firstdark.dev. Alternatively, use the `sdconfigeditor` command in your console to edit your config live on the server, using the web interface.
+!!!
+
 ## Video Guide
 [!embed](https://iframe.mediadelivery.net/embed/281161/24fa14aa-a2d3-4ccd-84e9-ad0543d83106?autoplay=false&loop=false&muted=false&preload=true&responsive=true)
 

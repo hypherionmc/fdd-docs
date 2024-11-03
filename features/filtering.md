@@ -3,6 +3,10 @@ title: Message Filtering
 order: c
 ---
 
+!!!warning Online Config Editor
+You can edit your config files, using our online config editor at https://editor.firstdark.dev. Alternatively, use the `sdconfigeditor` command in your console to edit your config live on the server, using the web interface.
+!!!
+
 Message Filtering is a system that allows you to ignore certain messages from being relayed to discord or to replace words in messages.
 
 This is useful for filtering out common spam messages like `gg`, `creeper`, `[REDACTED]`, etc.

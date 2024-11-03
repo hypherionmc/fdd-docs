@@ -3,6 +3,10 @@ title: Linked Commands
 order: a
 ---
 
+!!!warning Online Config Editor
+You can edit your config files, using our online config editor at https://editor.firstdark.dev. Alternatively, use the `sdconfigeditor` command in your console to edit your config live on the server, using the web interface.
+!!!
+
 ## Video Guide
 [!embed](https://iframe.mediadelivery.net/embed/281161/0d1e1b6f-48b4-407e-af4b-df29d38d548c?autoplay=false&loop=false&muted=false&preload=true&responsive=true)
 

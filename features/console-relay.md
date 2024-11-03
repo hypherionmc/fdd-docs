@@ -3,6 +3,10 @@ title: Console Relay
 order: e
 ---
 
+!!!warning Online Config Editor
+You can edit your config files, using our online config editor at https://editor.firstdark.dev. Alternatively, use the `sdconfigeditor` command in your console to edit your config live on the server, using the web interface.
+!!!
+
 Sometimes you want to know what is going on, on your server, without having to access the console.
 
 Luckily, Simple Discord Link comes with a Console relay Feature. This will forward the output of your server console, to the `consoleChannel` of your discord.

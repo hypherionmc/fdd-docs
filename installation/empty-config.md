@@ -5,6 +5,10 @@ order: d
 
 # Empty Config
 
+!!!warning Online Config Editor
+You can edit your config files, using our online config editor at https://editor.firstdark.dev. Alternatively, use the `sdconfigeditor` command in your console to edit your config live on the server, using the web interface.
+!!!
+
 ```json
 #General Mod Config
 [general]
@@ -13,23 +17,18 @@ order: d
     #Enable Additional Logging. Used for Fault Finding. WARNING: CAUSES LOG SPAM!
     debugging = false
     #Internal version control. DO NOT TOUCH!
-    configVersion = 15
+    configVersion = 22
 
 #Config specific to the discord bot
 [botConfig]
-    #The token of the Discord Bot to use. This will be encrypted on first load. See https://sdlink.fdd-docs.com/initial-setup/ to find this
+    #The token of the Discord Bot to use. This will be encrypted on first load. See https://sdlink.fdd-docs.com/installation/bot-creation/ to find this
     botToken = ""
+    #Print the bot invite link to the console on startup
+    printInviteLink = true
+    #Use silent replies when Slash Commands are used
+    silentReplies = true
     #How often the Bot Status will update on Discord (in Seconds). Set to 0 to disable
     statusUpdateInterval = 30
-
-    #Control what the Discord Bot will display as it's status message
-    [botConfig.botStatus]
-        #Do not add Playing. A status to display on the bot. You can use %players% and %maxplayers% to show the number of players on the server
-        status = "Enjoying Minecraft with %players%/%maxplayers% players"
-        #The type of the status displayed on the bot. Valid entries are: PLAYING, STREAMING, WATCHING, LISTENING, CUSTOM_STATUS
-        botStatusType = "CUSTOM_STATUS"
-        #The URL that will be used when the "botStatusType" is set to "STREAMING", required to display as "streaming".
-        botStatusStreamingURL = "https://twitch.tv/twitch"
     
     #Define how the bot should handle channel topic updates on the chat channel
     [botConfig.topicUpdates]
@@ -39,13 +38,18 @@ order: d
         updateInterval = 6
         #A topic for the Chat Relay channel. You can use %player%, %maxplayers%, %uptime% or just leave it empty.
         channelTopic = "Playing Minecraft with %players%/%maxplayers% people | Uptime: %uptime%"
-
+    
     #Configure the in-game Discord Invite command
     [botConfig.invite]
         #If this is defined, it will enable the in-game Discord command
         inviteLink = ""
         #The message to show when someone uses /discord command. You can use %inviteurl%
         inviteMessage = "Hey, check out our discord server here -> %inviteurl%"
+    
+    [[botConfig.botStatus]]
+        status = "Enjoying Minecraft with %players%/%maxplayers% players"
+        botStatusType = "CUSTOM_STATUS"
+        botStatusStreamingURL = "https://twitch.tv/twitch"
 
 #Config relating to the discord channels and webhooks to use with the mod
 [channelsAndWebhooks]
@@ -53,31 +57,35 @@ order: d
     serverAvatar = ""
     #The name to display for Server messages when using Webhooks
     serverName = "Minecraft Server"
-
-#Config relating to the discord channels to use with the mod
-[channelsAndWebhooks.channels]
-    #REQUIRED! The ID of the channel to post in and relay messages from. This is still needed, even in webhook mode
-    chatChannelID = "0"
-    #If this ID is set, event messages will be posted in this channel instead of the chat channel
-    eventsChannelID = "0"
-    #If this ID is set, console messages sent after the bot started will be relayed here
-    consoleChannelID = "0"
-
-#Config relating to the discord Webhooks to use with the mod
-[channelsAndWebhooks.webhooks]
-    #Prefer Webhook Messages over Standard Bot Messages
-    enabled = false
-    #The URL of the channel webhook to use for Chat Messages. Will be encrypted on first run
-    chatWebhook = ""
-    #The URL of the channel webhook to use for Server Messages. Will be encrypted on first run
-    eventsWebhook = ""
-    #The URL of the channel webhook to use for Console Messages. DOES NOT WORK FOR CONSOLE RELAY! Will be encrypted on first run
-    consoleWebhook = ""
+    
+    #Config relating to the discord channels to use with the mod
+    [channelsAndWebhooks.channels]
+        #REQUIRED! The ID of the channel to post in and relay messages from. This is still needed, even in webhook mode
+        chatChannelID = "0"
+        #If this ID is set, event messages will be posted in this channel instead of the chat channel
+        eventsChannelID = "0"
+        #If this ID is set, console messages sent after the bot started will be relayed here
+        consoleChannelID = "0"
+    
+    #Config relating to the discord Webhooks to use with the mod
+    [channelsAndWebhooks.webhooks]
+        #Prefer Webhook Messages over Standard Bot Messages
+        enabled = false
+        #Change how the webhook name is displayed in discord. Available placeholders: %display_name%, %mc_name%
+        webhookNameFormat = "%display_name%"
+        #The URL of the channel webhook to use for Chat Messages. Will be encrypted on first run
+        chatWebhook = ""
+        #The URL of the channel webhook to use for Server Messages. Will be encrypted on first run
+        eventsWebhook = ""
+        #The URL of the channel webhook to use for Console Messages. DOES NOT WORK FOR CONSOLE RELAY! Will be encrypted on first run
+        consoleWebhook = ""
 
 #Configure which types of messages are delivered to Minecraft/Discord
 [chat]
     #Use linked account names in Discord/Minecraft messages, instead of the default ones
     useLinkedNames = true
+    #Show the discord name, username and role of the user that sent a message in Minecraft when the message is hovered
+    showDiscordInfo = false
     #Convert Discord to MC, and MC to Discord Formatting
     formatting = true
     #Should console messages be sent to the Console Channel
@@ -100,6 +108,8 @@ order: d
     serverStopped = true
     #Should the chat be relayed
     playerMessages = true
+    #Should discord messages be relayed to Minecraft
+    discordMessages = true
     #Should Player Join messages be posted
     playerJoin = true
     #Should Player Leave messages be posted
@@ -135,7 +145,7 @@ order: d
     playerLeft = "*%player% has left the server!*"
     #Achievement Messages. Available variables: %player%, %title%, %description%
     achievements = "*%player% has made the advancement [%title%]: %description%*"
-    #Chat Messages. THIS DOES NOT APPLY TO EMBED OR WEBHOOK MESSAGES. Available variables: %player%, %message%
+    #Chat Messages. THIS DOES NOT APPLY TO EMBED OR WEBHOOK MESSAGES. Available variables: %player%, %message%, %mcname%
     chat = "%player%: %message%"
     #Death Messages. Available variables: %player%, %message%
     death = "%player% %message%"
@@ -147,84 +157,102 @@ order: d
 
     #Control where CHAT messages are delivered
     [messageDestinations.chat]
-        #The Channel the message will be delivered to. Valid entries are CHAT, EVENT, CONSOLE
-        channel = "CHAT"
-        #Should the message be sent using EMBED style messages
-        useEmbed = false
-        #Embed Layout to use
-        embedLayout = "default"
+    #The Channel the message will be delivered to. Valid entries are CHAT, EVENT, CONSOLE, OVERRIDE
+    channel = "CHAT"
+    #Should the message be sent using EMBED style messages
+    useEmbed = false
+    #Embed Layout to use
+    embedLayout = "default"
+    #Override the destination with a custom channel/webhook url. Make sure to change `channel` above to OVERRIDE
+    override = ""
     
     #Control where START messages are delivered
     [messageDestinations.start]
-        #The Channel the message will be delivered to. Valid entries are CHAT, EVENT, CONSOLE
+        #The Channel the message will be delivered to. Valid entries are CHAT, EVENT, CONSOLE, OVERRIDE
         channel = "EVENT"
         #Should the message be sent using EMBED style messages
         useEmbed = false
         #Embed Layout to use
         embedLayout = "default"
+        #Override the destination with a custom channel/webhook url. Make sure to change `channel` above to OVERRIDE
+        override = ""
     
     #Control where STOP messages are delivered
     [messageDestinations.stop]
-        #The Channel the message will be delivered to. Valid entries are CHAT, EVENT, CONSOLE
+        #The Channel the message will be delivered to. Valid entries are CHAT, EVENT, CONSOLE, OVERRIDE
         channel = "EVENT"
         #Should the message be sent using EMBED style messages
         useEmbed = false
         #Embed Layout to use
         embedLayout = "default"
+        #Override the destination with a custom channel/webhook url. Make sure to change `channel` above to OVERRIDE
+        override = ""
     
     #Control where JOIN messages are delivered
     [messageDestinations.join]
-        #The Channel the message will be delivered to. Valid entries are CHAT, EVENT, CONSOLE
+        #The Channel the message will be delivered to. Valid entries are CHAT, EVENT, CONSOLE, OVERRIDE
         channel = "EVENT"
         #Should the message be sent using EMBED style messages
         useEmbed = false
         #Embed Layout to use
         embedLayout = "default"
+        #Override the destination with a custom channel/webhook url. Make sure to change `channel` above to OVERRIDE
+        override = ""
     
     #Control where LEAVE messages are delivered
     [messageDestinations.leave]
-        #The Channel the message will be delivered to. Valid entries are CHAT, EVENT, CONSOLE
+        #The Channel the message will be delivered to. Valid entries are CHAT, EVENT, CONSOLE, OVERRIDE
         channel = "EVENT"
         #Should the message be sent using EMBED style messages
         useEmbed = false
         #Embed Layout to use
         embedLayout = "default"
+        #Override the destination with a custom channel/webhook url. Make sure to change `channel` above to OVERRIDE
+        override = ""
     
     #Control where ADVANCEMENT messages are delivered
     [messageDestinations.advancements]
-        #The Channel the message will be delivered to. Valid entries are CHAT, EVENT, CONSOLE
+        #The Channel the message will be delivered to. Valid entries are CHAT, EVENT, CONSOLE, OVERRIDE
         channel = "EVENT"
         #Should the message be sent using EMBED style messages
         useEmbed = false
         #Embed Layout to use
         embedLayout = "default"
+        #Override the destination with a custom channel/webhook url. Make sure to change `channel` above to OVERRIDE
+        override = ""
     
     #Control where DEATH messages are delivered
     [messageDestinations.death]
-        #The Channel the message will be delivered to. Valid entries are CHAT, EVENT, CONSOLE
+        #The Channel the message will be delivered to. Valid entries are CHAT, EVENT, CONSOLE, OVERRIDE
         channel = "EVENT"
         #Should the message be sent using EMBED style messages
         useEmbed = false
         #Embed Layout to use
         embedLayout = "default"
+        #Override the destination with a custom channel/webhook url. Make sure to change `channel` above to OVERRIDE
+        override = ""
     
     #Control where COMMAND messages are delivered
     [messageDestinations.commands]
-        #The Channel the message will be delivered to. Valid entries are CHAT, EVENT, CONSOLE
+        #The Channel the message will be delivered to. Valid entries are CHAT, EVENT, CONSOLE, OVERRIDE
         channel = "EVENT"
         #Should the message be sent using EMBED style messages
         useEmbed = false
         #Embed Layout to use
         embedLayout = "default"
+        #Override the destination with a custom channel/webhook url. Make sure to change `channel` above to OVERRIDE
+        override = ""
     
     #Control where messages that match none of the above are delivered
     [messageDestinations.custom]
-        #The Channel the message will be delivered to. Valid entries are CHAT, EVENT, CONSOLE
+        #The Channel the message will be delivered to. Valid entries are CHAT, EVENT, CONSOLE, OVERRIDE
         channel = "EVENT"
         #Should the message be sent using EMBED style messages
         useEmbed = false
         #Embed Layout to use
         embedLayout = "default"
+        #Override the destination with a custom channel/webhook url. Make sure to change `channel` above to OVERRIDE
+        override = ""
 
 #Manage access to your server, similar to whitelisting
 [accessControl]
@@ -234,6 +262,8 @@ order: d
     requireDiscordMembership = false
     #Can players verify multiple Minecraft Accounts
     allowMultipleAccounts = false
+    #Change the discord user nickname to their Minecraft name when their accounts are linked
+    changeDiscordNickname = false
     #Optional: The player requires any of these roles to be able to join your server
     requiredRoles = []
     #Optional: Players with these roles will never be allowed access to your server
@@ -245,8 +275,8 @@ order: d
     #Should members with verified accounts, be banned from discord when they are banned on Minecraft
     banMemberOnMinecraftBan = false
 
-#Configure messages shown to players when they don't meet verification requirements
-[accessControl.verificationMessages]
+    #Configure messages shown to players when they don't meet verification requirements
+    [accessControl.verificationMessages]
     #The message shown to players that are not verified
     accountVerification = "This server requires account verification. Your verification code is: {code}. Please visit our discord server for instructions on how to verify your account."
     #Message to show to players that are not a member of your discord
@@ -262,6 +292,10 @@ order: d
     enabled = false
     #Command Prefix. For example ?weather clear
     prefix = "?"
+    #Should command replies be deleted automatically or not
+    keepReplies = false
+    #Should the original message that was sent to trigger the command be deleted automatically or not
+    keepOriginal = false
     #You can leave this empty, or enter the channel ID's (surrounded by "") of channels where linked commands can be used
     allowedChannels = []
     #List of command permissions
@@ -275,4 +309,13 @@ order: d
     entries = []
     #Ignore messages sent from certain threads
     ignoredThreads = []
+
+#Run Minecraft commands when discord roles changes. Requires Access Control to be enabled
+[triggerCommands]
+    #Should any of the below commands be executed when a role changes
+    enabled = false
+    #Commands to run when roles are added
+    roleAdded = []
+    #Commands to run when roles are removed
+    roleRemoved = []
 ```

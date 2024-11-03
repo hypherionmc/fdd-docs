@@ -3,6 +3,10 @@ title: Access Control
 order: b
 ---
 
+!!!warning Online Config Editor
+You can edit your config files, using our online config editor at https://editor.firstdark.dev. Alternatively, use the `sdconfigeditor` command in your console to edit your config live on the server, using the web interface.
+!!!
+
 ## Video Guide
 [!embed](https://iframe.mediadelivery.net/embed/281161/a09a721a-a7d2-48a7-b997-bbdbb4f8b722?autoplay=false&loop=false&muted=false&preload=true&responsive=true)
 

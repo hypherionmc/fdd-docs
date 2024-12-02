@@ -16,6 +16,9 @@ The following is a list of mods we include official compatibility for. Mods not 
 * [Vanish Mod (Forge)](https://modrinth.com/mod/vanishmod)
 * [Fabric Tailor](https://modrinth.com/mod/fabrictailor)
 * [Maintenance Mode](https://modrinth.com/mod/maintenancemode)
+* [FTB Ranks (Forge/NeoForge)](https://www.curseforge.com/minecraft/mc-mods/ftb-ranks-forge)
+* [FTB Ranks (Fabric)](https://www.curseforge.com/minecraft/mc-mods/ftb-ranks-fabric)
+* [LuckPerms](https://luckperms.net/download)
 
 ### Additional Supported Features
 

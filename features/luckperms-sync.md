@@ -2,6 +2,9 @@
 title: Sync LuckPerms Ranks with Discord
 order: h
 ---
+!!! Notice
+You can also edit this config file with our online editor at https://editor.firstdark.dev to make it easier
+!!!
 
 Since Simple Discord Link 3.2.1, it's possible to sync LuckPerms ranks (or groups) with discord roles.
 
@@ -20,9 +23,9 @@ By default, it looks like this:
 	syncs = []
 ```
 
-`syncToMinecraft` -> Sync Discord Roles to In Game Ranks
-`syncToDiscord` -> Sync In Game Ranks to Discord
-`syncs` -> List of ranks and roles that will be synced.
+- `syncToMinecraft` -> Sync Discord Roles to In Game Ranks
+- `syncToDiscord` -> Sync In Game Ranks to Discord
+- `syncs` -> List of ranks and roles that will be synced. This gets removed when the actual values are added
 
 
 Example:
@@ -35,9 +38,14 @@ Example:
     #Sync Groups/Ranks to Discord roles from Minecraft
     syncToDiscord = true
     #List of Ranks and Roles that will be synced. Check the wiki on how to configure this
+    # REMOVE ME syncs = []
     [[luckperms.syncs]]
         rank = "testing"
         role = "1310640194755493969"
+
+    [[luckperms.syncs]]
+        rank = "testingrole"
+        role = "2585882845654968465"
 ```
 
 The above example will sync the `testing` group, with a role in discord, and the role in discord with the `testing` group in game

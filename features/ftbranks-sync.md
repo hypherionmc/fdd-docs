@@ -2,6 +2,9 @@
 title: Sync FTB Ranks with Discord
 order: i
 ---
+!!! Notice
+You can also edit this config file with our online editor at https://editor.firstdark.dev to make it easier
+!!!
 
 Since Simple Discord Link 3.2.1, it's possible to sync FTB ranks, ranks with discord roles.
 
@@ -20,10 +23,9 @@ By default, it looks like this:
     syncs = []
 ```
 
-`syncToMinecraft` -> Sync Discord Roles to In Game Ranks
-`syncToDiscord` -> Sync In Game Ranks to Discord
-`syncs` -> List of ranks and roles that will be synced.
-
+- `syncToMinecraft` -> Sync Discord Roles to In Game Ranks
+- `syncToDiscord` -> Sync In Game Ranks to Discord
+- `syncs` -> List of ranks and roles that will be synced. This gets removed when the actual values are added
 
 Example:
 
@@ -35,9 +37,14 @@ Example:
     #Sync Groups/Ranks to Discord roles from Minecraft
     syncToDiscord = true
     #List of Ranks and Roles that will be synced. Check the wiki on how to configure this
+    # REMOVE ME syncs = []
     [[ftbranks.syncs]]
         rank = "testrank"
         role = "1310591485254697010"
+
+    [[ftbranks.syncs]]
+        rank = "testrank2"
+        role = "588557885658896588"
 ```
 
 The above example will sync the `testrank` rank, with a role in discord, and the role in discord with the `testrank` rank in game

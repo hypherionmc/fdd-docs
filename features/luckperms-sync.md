@@ -40,15 +40,15 @@ Example:
     #List of Ranks and Roles that will be synced. Check the wiki on how to configure this
     # REMOVE ME syncs = []
     [[luckperms.syncs]]
-        rank = "testing"
+        rank = "group.testing"
         role = "1310640194755493969"
 
     [[luckperms.syncs]]
-        rank = "testingrole"
+        rank = "group.testingrole"
         role = "2585882845654968465"
 ```
 
-The above example will sync the `testing` group, with a role in discord, and the role in discord with the `testing` group in game
+The above example will sync the `group.testing` group, with a role in discord, and the role in discord with the `testing` group in game
 
 
 !!! Notice

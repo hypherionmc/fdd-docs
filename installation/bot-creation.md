@@ -42,9 +42,22 @@ The Bot can't have "Discord" in the name, and it uses the Application name as th
 
 ***
 
-## Configuring the Bot (**Bot** Section)
+## Configuring the Bot
 
-### Build-A-Bot
+The following will go through the tabs on the left. Anything not mentioned will remain as default.
+
+### INSTALLATION TAB
+
+In the "Installation Contexts", uncheck "User Install"
+
+Set "Install Link" to "None"
+
+This is what the result should look like:
+<br>![](https://cdn.firstdark.dev/docs/sdlink-wiki/installation.png)
+
+### BOT TAB
+
+#### Build-A-Bot
 
 In the **Build-A-Bot** Section click "Reset Token" to generate a private token. This is how SDLink knows which bot to send the commands to. Make a note of the token. once you leave this page, you won't be able to see it and will have to reset it again.
 <br>![](https://cdn.firstdark.dev/docs/sdlink-wiki/bot1.png)
@@ -54,34 +67,25 @@ It's important that you don't share this bot token with anyone. It is essentiall
 This token will also be encrypted in the config file after you launch the server for the first time
 !!!
 
-&nbsp;
-
-### Authorization Flow
-Click on the INSTALLATION Tab on the left hand menu.
-
-From there on the `Installation` page, disable `User Install`, keep `Guild Install` checked, and set the `Install Link` to NONE.
-
-<br>![](https://cdn.firstdark.dev/docs/sdlink-wiki/installation.png)
-
-Now go back to the BOT section.
+#### Authorization Flow
 
 Disable the "PUBLIC BOT" flag. This will ensure that only YOU can add the bot to a server
 <br>![](https://cdn.firstdark.dev/docs/sdlink-wiki/bot2.png)
 
-&nbsp;
-
-### Privileged Gateway Intents
+#### Privileged Gateway Intents
 
 Ensure all options in "Privileged Gateway Intents" are checked. These are needed for the bot to function.
 <br>![](https://cdn.firstdark.dev/docs/sdlink-wiki/bot6.png)
 
 ***
 
-## OAuth2 URL Generator
+## Inviting the Bot
 
-Go to "OAuth2" and scroll down to the bottom of the page.
+This is how you will generate the URL so you can invite the bot to your server.
 
-Select "applications.commands" and "bot" in the **SCOPES** section.
+In the "OAUTH2" tab on the left, scroll to **Oauth2 URL Generator**
+
+In the **SCOPES** section, enable "applications.commands" and "bot"
 <br>![](https://cdn.firstdark.dev/docs/sdlink-wiki/bot4.png)
 
 In the **BOT PERMISSIONS** section, enable the following:
@@ -106,8 +110,8 @@ Optionally you can enable:
 
 For more details on what each permission does: see [SDLink Permissions Explained](./sdlink-perms.md)
 
-Use the **GENERATED URL** at the bottom of the page to invite the bot to your discord channel
+Use the **GENERATED URL** at the bottom of the page to invite the bot to your discord server
 
 !!!info Pre-Configured URL
-At first launch of the Minecraft server (after adding the bot token to the config) sdlink will generate an invite link and display it at the top of the console logs. This will have all the necessary permissions needed for the bot to function at full capacity
+At first launch of the Minecraft server (after adding the bot token to the config) sdlink will generate an invite link and display it at the top of the console logs. This will have all the necessary permissions needed for the bot to function at full capacity (including optional permissions)
 !!!

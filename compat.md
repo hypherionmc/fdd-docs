@@ -19,6 +19,8 @@ The following is a list of mods we include official compatibility for. Mods not 
 * [FTB Ranks (Forge/NeoForge)](https://www.curseforge.com/minecraft/mc-mods/ftb-ranks-forge)
 * [FTB Ranks (Fabric)](https://www.curseforge.com/minecraft/mc-mods/ftb-ranks-fabric)
 * [LuckPerms](https://luckperms.net/download)
+* [Emojiful](https://www.curseforge.com/minecraft/mc-mods/emojiful)
+* [Player Revive Mod](https://www.curseforge.com/minecraft/mc-mods/playerrevive)
 
 ### Additional Supported Features
 

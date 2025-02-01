@@ -32,6 +32,7 @@ The new system allows you to:
 2) Deny access to players if they are not a member of your discord server (Configurable).
 3) Only allow access to certain roles. This is perfect for patreon/staff only servers.
 4) The new system includes 2 staff commands to manually verify/unverify players, as well as a list command to see verified players.
+5) Allow players to optionally verify their accounts, which allows features like LuckPerms, FTB Rank Sync and Linked Names
 
 ---
 

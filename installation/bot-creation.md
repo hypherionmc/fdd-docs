@@ -77,6 +77,10 @@ Ensure all options in "Privileged Gateway Intents" are checked. These are needed
 
 ***
 
+!!!info Pre-Configured URL
+At first launch of the Minecraft server (after adding the bot token to the config) sdlink will generate an invite link and display it at the top of the console logs. This will have all the necessary permissions needed for the bot to function at full capacity
+!!!
+
 ## OAuth2 URL Generator
 
 Go to "OAuth2" and scroll down to the bottom of the page.

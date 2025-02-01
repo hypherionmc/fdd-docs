@@ -6,6 +6,10 @@ order: h
 You can also edit this config file with our online editor at https://editor.firstdark.dev to make it easier
 !!!
 
+!!! Warning
+This feature requires Access Control, or Optional Verification to be enabled
+!!!
+
 Since Simple Discord Link 3.2.1, it's possible to sync LuckPerms ranks (or groups) with discord roles.
 
 To configure this, open up your `simple-discord-compat.toml` file, and find the LuckPerms sections.

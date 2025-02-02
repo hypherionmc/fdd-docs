@@ -28,8 +28,10 @@ SDLink requires CraterLib as a dependency. Download and transfer the mod files t
 
 ***
 
+!!! warning
 At first run an empty config file will be generated: `config/simple-discord-link/simple-discord-link.toml`  
 See: [Empty Config](./empty-config.md)
+!!!
 
 ## Configuration Settings
 

@@ -5,7 +5,7 @@ title: Home
 
 ![](https://cdn.firstdark.dev/artpacks/srpc/srpc_logo_banner.jpg)
 
-![](https://img.shields.io/badge/Forge/Fabric/Quilt-Download%20Supported-yellow.svg) [![](https://img.shields.io/badge/Jenkins-Development%20Builds-red.svg)](https://ci.firstdark.dev/job/Simple%20RPC%20Modern/) [![](https://img.shields.io/badge/Discord-First%20Dark%20Development-blue.svg)](https://discord.firstdark.dev)
+![](https://img.shields.io/badge/Forge/NeoForge/Fabric/Quilt-Download%20Supported-yellow.svg) [![](https://img.shields.io/badge/NightBloom-Development%20Builds-red.svg)](https://nightbloom.cc/project/simplerpc) [![](https://img.shields.io/badge/Discord-First%20Dark%20Development-blue.svg)](https://discord.firstdark.dev)
 
 ![](https://cdn.firstdark.dev/artpacks/srpc/srpc_info.jpg)
 

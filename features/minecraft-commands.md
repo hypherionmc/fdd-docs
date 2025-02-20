@@ -13,4 +13,5 @@ hideplayer | Hide a player from chat relay (similar to muting) | sdlink.muteplay
 unhideplayer | Remove a hidden player, so their chats can be relayed again | sdlink.unmuteplayer
 reloadbot | Reload the entire bot and config (similar to a server restart, without restarting) | sdlink.reloadbot
 reloadembeds | Reload embeds when changes have been made to them | sdlink.reloadembeds
-whoist | View the Discord Name of a linked minecraft account | sdlink.whois
+whois | View the Discord Name of a linked minecraft account | sdlink.whois
+discordverify | Command to use with optional verification | sdlink.discord_verify

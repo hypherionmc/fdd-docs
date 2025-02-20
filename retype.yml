@@ -1,20 +1,20 @@
 input: .
 output: .retype
-url: fdd-docs.com
+url: srpcbeta.fdd-docs.com
 branding:
-  title: First Dark Dev
-  label: Docs
+  title: Simple RPC
+  label: Beta
 links:
   - text: Discord
-    link: https://discord.gg/PdVnXf9
+    link: https://discord.firstdark.dev
   - text: Website
-    link: https://firstdarkdev.xyz
-  - text: Github
-    link: https://github.com/hypherionmc/fdd-docs
+    link: https://firstdark.dev
+  - text: GitHub
+    link: https://github.com/firstdarkdev/simple-rpc
 footer:
   copyright: "&copy; {{ year }} First Dark Development. All rights reserved."
 meta:
-  title: " | First Dark Development Docs"
+  title: " | Simple Discord RPC Docs"
 search:
   placeholder: Search
 snippets:
@@ -23,4 +23,6 @@ snippets:
     - json
 edit:
   repo: "https://github.com/hypherionmc/fdd-docs"
-  branch: master
+  branch: srpcbeta
+templating:
+  enabled: false

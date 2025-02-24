@@ -32,7 +32,7 @@ All the configs provided by Simple RPC allow you to add buttons to them.
 To add a new button, find the `buttons = []` section in your config. You will need to remove this line completely, and replace it with the following:
 
 ```json
-[[SECTIONNAME.buttons]]
+[[SECTIONNAME.presence.buttons]]
   label = "My Test Button"
   url = "https://google.com"
 ```

@@ -1,5 +1,168 @@
 {
-  "version": "3.5.0",
-  "created": "2024-05-09T20:00:10Z",
-  "files": []
+  "version": "3.6.0",
+  "created": "2025-02-20T20:08:43Z",
+  "files": [
+    {
+      "path": ".nojekyll"
+    },
+    {
+      "path": "404.html"
+    },
+    {
+      "path": "changelogs/3.0.0/index.html"
+    },
+    {
+      "path": "changelogs/3.1.0/index.html"
+    },
+    {
+      "path": "changelogs/3.1.1/index.html"
+    },
+    {
+      "path": "changelogs/3.1.2/index.html"
+    },
+    {
+      "path": "changelogs/3.1.3/index.html"
+    },
+    {
+      "path": "changelogs/3.1.4/index.html"
+    },
+    {
+      "path": "changelogs/3.1.5/index.html"
+    },
+    {
+      "path": "changelogs/3.2.0/index.html"
+    },
+    {
+      "path": "changelogs/3.2.1/index.html"
+    },
+    {
+      "path": "changelogs/3.2.2/index.html"
+    },
+    {
+      "path": "changelogs/3.2.3/index.html"
+    },
+    {
+      "path": "CNAME"
+    },
+    {
+      "path": "compat/index.html"
+    },
+    {
+      "path": "devapi/adding-slash-commands/index.html"
+    },
+    {
+      "path": "devapi/events/index.html"
+    },
+    {
+      "path": "devapi/getting-started/index.html"
+    },
+    {
+      "path": "devapi/sending-message/index.html"
+    },
+    {
+      "path": "faq/index.html"
+    },
+    {
+      "path": "features/client-mentions/index.html"
+    },
+    {
+      "path": "features/command-triggers/index.html"
+    },
+    {
+      "path": "features/console-relay/index.html"
+    },
+    {
+      "path": "features/custom_embeds/index.html"
+    },
+    {
+      "path": "features/filtering/index.html"
+    },
+    {
+      "path": "features/ftbranks-sync/index.html"
+    },
+    {
+      "path": "features/linked-commands/index.html"
+    },
+    {
+      "path": "features/luckperms-sync/index.html"
+    },
+    {
+      "path": "features/minecraft-commands/index.html"
+    },
+    {
+      "path": "features/whitelisting/index.html"
+    },
+    {
+      "path": "index.html"
+    },
+    {
+      "path": "installation/advanced-config/index.html"
+    },
+    {
+      "path": "installation/basic-config/index.html"
+    },
+    {
+      "path": "installation/bot-creation/index.html"
+    },
+    {
+      "path": "installation/command-permissions/index.html"
+    },
+    {
+      "path": "installation/empty-config/index.html"
+    },
+    {
+      "path": "installation/sdlink-perms/index.html"
+    },
+    {
+      "path": "installation/webhook-config/index.html"
+    },
+    {
+      "path": "migration/index.html"
+    },
+    {
+      "path": "resources/css/retype.css"
+    },
+    {
+      "path": "resources/fonts/Inter-italic-latin-var.woff2"
+    },
+    {
+      "path": "resources/fonts/Inter-roman-latin-var.woff2"
+    },
+    {
+      "path": "resources/js/config.js"
+    },
+    {
+      "path": "resources/js/lunr.js"
+    },
+    {
+      "path": "resources/js/prism.js"
+    },
+    {
+      "path": "resources/js/retype.js"
+    },
+    {
+      "path": "resources/js/search.json"
+    },
+    {
+      "path": "resources/lunr.js.LICENSE.txt"
+    },
+    {
+      "path": "resources/mermaid.js.LICENSE.txt"
+    },
+    {
+      "path": "resources/prism.js.LICENSE.txt"
+    },
+    {
+      "path": "resources/retype.js.LICENSE.txt"
+    },
+    {
+      "path": "resources/retype.LICENSE.txt"
+    },
+    {
+      "path": "robots.txt"
+    },
+    {
+      "path": "sitemap.xml.gz"
+    }
+  ]
 }

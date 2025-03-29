@@ -16,8 +16,10 @@ You can edit your config files, using our online config editor at https://editor
     enabled = true
     #Enable Additional Logging. Used for Fault Finding. WARNING: CAUSES LOG SPAM!
     debugging = false
+    #The active language to use for built in messages. Defaults to en_us if a language is not found
+    language = "en_us"
     #Internal version control. DO NOT TOUCH!
-    configVersion = 22
+    configVersion = 30
 
 #Config specific to the discord bot
 [botConfig]
@@ -29,7 +31,7 @@ You can edit your config files, using our online config editor at https://editor
     silentReplies = true
     #How often the Bot Status will update on Discord (in Seconds). Set to 0 to disable
     statusUpdateInterval = 30
-    
+
     #Define how the bot should handle channel topic updates on the chat channel
     [botConfig.topicUpdates]
         #Should the bot update the topic of your chat channel automatically every 6 Minutes
@@ -38,17 +40,21 @@ You can edit your config files, using our online config editor at https://editor
         updateInterval = 6
         #A topic for the Chat Relay channel. You can use %player%, %maxplayers%, %uptime% or just leave it empty.
         channelTopic = "Playing Minecraft with %players%/%maxplayers% people | Uptime: %uptime%"
-    
+
     #Configure the in-game Discord Invite command
     [botConfig.invite]
         #If this is defined, it will enable the in-game Discord command
         inviteLink = ""
         #The message to show when someone uses /discord command. You can use %inviteurl%
         inviteMessage = "Hey, check out our discord server here -> %inviteurl%"
-    
+
+    #Control what the Discord Bot will display as it's status message
     [[botConfig.botStatus]]
+        #Do not add Playing. A status to display on the bot. You can use %players% and %maxplayers% to show the number of players on the server
         status = "Enjoying Minecraft with %players%/%maxplayers% players"
+        #The type of the status displayed on the bot. Valid entries are: PLAYING, STREAMING, WATCHING, LISTENING, CUSTOM_STATUS
         botStatusType = "CUSTOM_STATUS"
+        #The URL that will be used when the "botStatusType" is set to "STREAMING", required to display as "streaming".
         botStatusStreamingURL = "https://twitch.tv/twitch"
 
 #Config relating to the discord channels and webhooks to use with the mod
@@ -90,7 +96,9 @@ You can edit your config files, using our online config editor at https://editor
     formatting = true
     #Should console messages be sent to the Console Channel
     sendConsoleMessages = false
-    #The type of image to use as the player icon in messages. Valid entries are: AVATAR, HEAD, BODY, COMBO
+    #Add your own Avatar service URL here. Use {uuid} to replace the player ID in the URL
+    customAvatarService = "https://crafatar.com/avatars/{uuid}"
+    #The type of image to use as the player icon in messages. Valid entries are: AVATAR, HEAD, BODY, COMBO, CUSTOM
     playerAvatarType = "HEAD"
     #Should messages sent with TellRaw be sent to discord as a chat? (Experimental)
     relayTellRaw = true
@@ -114,17 +122,19 @@ You can edit your config files, using our online config editor at https://editor
     playerJoin = true
     #Should Player Leave messages be posted
     playerLeave = true
-    #Should Advancement messages be posted
-    advancementMessages = true
-    #Should Death Announcements be posted
-    deathMessages = true
+    #Should Advancement messages be posted. Valid values are ALWAYS, NEVER or GAMERULE
+    advancementMessages = "ALWAYS"
+    #Should Death Announcements be posted. Valid values are ALWAYS, NEVER or GAMERULE
+    deathMessages = "ALWAYS"
     #Should Messages from the /say command be posted
     sendSayCommand = true
     #Should commands be posted to discord
     broadcastCommands = true
+    #Should whitelist changes be posted to discord
+    whitelistChanged = false
     #Commands that should not be broadcast to discord
-    ignoredCommands = ["particle", "login", "execute"]
-    #Allow mentioning discord roles, users and channels from Minecraft Chat
+    ignoredCommands = ["particle", "login", "execute", "sdconfigeditor"]
+    #Allow mentioning discord roles and users from Minecraft Chat
     allowMentionsFromChat = false
 
 #Change the format in which messages are displayed
@@ -143,12 +153,16 @@ You can edit your config files, using our online config editor at https://editor
     playerJoined = "*%player% has joined the server!*"
     #Player Left Message. Use %player% to display the player name
     playerLeft = "*%player% has left the server!*"
-    #Achievement Messages. Available variables: %player%, %title%, %description%
-    achievements = "*%player% has made the advancement [%title%]: %description%*"
+    #Advancement Messages. Available variables: %player%, %title%, %description%
+    advancements = "*%player% has made the advancement [%title%]: %description%*"
     #Chat Messages. THIS DOES NOT APPLY TO EMBED OR WEBHOOK MESSAGES. Available variables: %player%, %message%, %mcname%
     chat = "%player%: %message%"
     #Death Messages. Available variables: %player%, %message%
     death = "%player% %message%"
+    #Message to be sent when a player is added to the whitelist
+    whitelistAdded = "%player% has been whitelisted!"
+    #Message to be sent when a player is removed from the whitelist
+    whitelistRemoved = "%player% has been removed from the whitelist!"
     #Command Messages. Available variables: %player%, %command%
     commands = "%player% **executed command**: *%command%*"
 
@@ -157,14 +171,14 @@ You can edit your config files, using our online config editor at https://editor
 
     #Control where CHAT messages are delivered
     [messageDestinations.chat]
-    #The Channel the message will be delivered to. Valid entries are CHAT, EVENT, CONSOLE, OVERRIDE
-    channel = "CHAT"
-    #Should the message be sent using EMBED style messages
-    useEmbed = false
-    #Embed Layout to use
-    embedLayout = "default"
-    #Override the destination with a custom channel/webhook url. Make sure to change `channel` above to OVERRIDE
-    override = ""
+        #The Channel the message will be delivered to. Valid entries are CHAT, EVENT, CONSOLE, OVERRIDE
+        channel = "CHAT"
+        #Should the message be sent using EMBED style messages
+        useEmbed = false
+        #Embed Layout to use
+        embedLayout = "default"
+        #Override the destination with a custom channel/webhook url. Make sure to change `channel` above to OVERRIDE
+        override = ""
     
     #Control where START messages are delivered
     [messageDestinations.start]
@@ -243,6 +257,17 @@ You can edit your config files, using our online config editor at https://editor
         #Override the destination with a custom channel/webhook url. Make sure to change `channel` above to OVERRIDE
         override = ""
     
+    #Control where WHITELIST change messages are delivered
+    [messageDestinations.whitelist]
+        #The Channel the message will be delivered to. Valid entries are CHAT, EVENT, CONSOLE, OVERRIDE
+        channel = "CONSOLE"
+        #Should the message be sent using EMBED style messages
+        useEmbed = false
+        #Embed Layout to use
+        embedLayout = "default"
+        #Override the destination with a custom channel/webhook url. Make sure to change `channel` above to OVERRIDE
+        override = ""
+    
     #Control where messages that match none of the above are delivered
     [messageDestinations.custom]
         #The Channel the message will be delivered to. Valid entries are CHAT, EVENT, CONSOLE, OVERRIDE
@@ -258,6 +283,8 @@ You can edit your config files, using our online config editor at https://editor
 [accessControl]
     #Enable Access Control
     enabled = false
+    #Allow users to verify their accounts without access control. This setting is ignored if the above setting is set to true
+    optionalVerification = false
     #Does the player need to be a member of your discord to join
     requireDiscordMembership = false
     #Can players verify multiple Minecraft Accounts
@@ -269,7 +296,7 @@ You can edit your config files, using our online config editor at https://editor
     #Optional: Players with these roles will never be allowed access to your server
     deniedRoles = []
     #Optional: Role name or ID to assign to verified player accounts
-    verifiedRole = ""
+    verifiedRole = []
     #Should players with verified accounts, be banned from Minecraft if they get banned on discord
     banPlayerOnDiscordBan = false
     #Should members with verified accounts, be banned from discord when they are banned on Minecraft
@@ -277,14 +304,16 @@ You can edit your config files, using our online config editor at https://editor
 
     #Configure messages shown to players when they don't meet verification requirements
     [accessControl.verificationMessages]
-    #The message shown to players that are not verified
-    accountVerification = "This server requires account verification. Your verification code is: {code}. Please visit our discord server for instructions on how to verify your account."
-    #Message to show to players that are not a member of your discord
-    nonMember = "Sorry, you need to be a member of our discord server to join this server"
-    #Message to show when player doesn't have one of the required roles. Use {roles} to display the names of configured roles
-    requireRoles = "Sorry, but you require any of the following roles: {roles}"
-    #Message to show when player has a role from the deniedRoles list
-    roleDenied = "Sorry, but you are not allowed to access this server."
+        #This message is shown to users when they use the in-game verification command
+        optionalVerificationMessage = "Your verification code is: {code}. Please DM our bot, or use the /verify command in our discord to verify your account"
+        #The message shown to players that are not verified
+        accountVerification = "This server requires account verification. Your verification code is: {code}. Please visit our discord server for instructions on how to verify your account."
+        #Message to show to players that are not a member of your discord
+        nonMember = "Sorry, you need to be a member of our discord server to join this server"
+        #Message to show when player doesn't have one of the required roles. Use {roles} to display the names of configured roles
+        requireRoles = "Sorry, but you require any of the following roles: {roles}"
+        #Message to show when player has a role from the deniedRoles list
+        roleDenied = "Sorry, but you are not allowed to access this server."
 
 #Execute Minecraft commands in Discord
 [minecraftCommands]
@@ -301,13 +330,13 @@ You can edit your config files, using our online config editor at https://editor
     #List of command permissions
     permissions = []
 
-#Configure messages that will be ignored when relaying to discord
-[ignoredMessages]
-    #Filter certain types of messages from being relayed back to discord
-    ignoredMessages = true
+#Configure message/username filtering for discord messages
+[filtering]
+    #Enable the filter system
+    enabled = true
     #List of entries to process
     entries = []
-    #Ignore messages sent from certain threads
+    #Ignore messages sent from certain threads. Enable debug logging to see what thread the message is from
     ignoredThreads = []
 
 #Run Minecraft commands when discord roles changes. Requires Access Control to be enabled

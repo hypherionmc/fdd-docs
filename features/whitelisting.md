@@ -43,23 +43,39 @@ In your config, you will find a section like this:
 ```json
 #Manage access to your server, similar to whitelisting
 [accessControl]
-	#Enable Access Control
-	enabled = false
-	#Does the player need to be a member of your discord to join
-	requireDiscordMembership = false
-	#Optional: The player requires any of these roles to be able to join your server
-	requiredRoles = []
-	#Optional: Role name or ID to assign to verified player accounts
-	verifiedRole = ""
+    #Enable Access Control
+    enabled = false
+    #Allow users to verify their accounts without access control. This setting is ignored if the above setting is set to true
+    optionalVerification = false
+    #Does the player need to be a member of your discord to join
+    requireDiscordMembership = false
+    #Can players verify multiple Minecraft Accounts
+    allowMultipleAccounts = false
+    #Change the discord user nickname to their Minecraft name when their accounts are linked
+    changeDiscordNickname = false
+    #Optional: The player requires any of these roles to be able to join your server
+    requiredRoles = []
+    #Optional: Players with these roles will never be allowed access to your server
+    deniedRoles = []
+    #Optional: Role name or ID to assign to verified player accounts
+    verifiedRole = []
+    #Should players with verified accounts, be banned from Minecraft if they get banned on discord
+    banPlayerOnDiscordBan = false
+    #Should members with verified accounts, be banned from discord when they are banned on Minecraft
+    banMemberOnMinecraftBan = false
 
-	#Configure messages shown to players when they don't meet verification requirements
-	[accessControl.verificationMessages]
-		#The message shown to players that are not verified
-		accountVerification = "This server requires account verification. Your verification code is: {code}. Please visit our discord server for instructions on how to verify your account."
-		#Message to show to players that are not a member of your discord
-		nonMember = "Sorry, you need to be a member of our discord server to join this server"
-		#Message to show when player doesn't have one of the required roles. Use {roles} to display the names of configured roles
-		requireRoles = "Sorry, but you require any of the following roles: {roles}"
+    #Configure messages shown to players when they don't meet verification requirements
+    [accessControl.verificationMessages]
+        #This message is shown to users when they use the in-game verification command
+        optionalVerificationMessage = "Your verification code is: {code}. Please DM our bot, or use the /verify command in our discord to verify your account"
+        #The message shown to players that are not verified
+        accountVerification = "This server requires account verification. Your verification code is: {code}. Please visit our discord server for instructions on how to verify your account."
+        #Message to show to players that are not a member of your discord
+        nonMember = "Sorry, you need to be a member of our discord server to join this server"
+        #Message to show when player doesn't have one of the required roles. Use {roles} to display the names of configured roles
+        requireRoles = "Sorry, but you require any of the following roles: {roles}"
+        #Message to show when player has a role from the deniedRoles list
+        roleDenied = "Sorry, but you are not allowed to access this server."
 ```
 
 To enable the system, simply change `enabled` to `true`.
@@ -72,6 +88,13 @@ For example:
 	#Enable Access Control
 	enabled = true
 ```
+
+!!!warning Optional Verification
+If you want users to be able to choose if they verify or not, enable the `optionalVerification` option. Users can then trigger the verification process by using the `discordverify` command in game.
+
+### Warning
+When optionalVerification is enabled, you can NOT use access roles. You can still use all the other features that require a linked account.
+!!!
 
 When this is enabled, any unverified player that tries to join your server, will see the message configured in `accountVerification`. Remember to include `{code}` to show the player their actual verification code.
 

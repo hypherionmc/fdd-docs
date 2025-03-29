@@ -27,7 +27,7 @@ Toggle Developer Mode
 
 ## Creating the Bot
 
-Go to [https://discord.com/developers](https://discord.com/developers)
+Go to [https://discord.com/developers/applications](https://discord.com/developers/applications)
 
 Select "New Application" in the top right
 <br>![](https://cdn.firstdark.dev/docs/sdlink-wiki/application1.png)

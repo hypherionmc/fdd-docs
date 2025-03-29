@@ -3,8 +3,8 @@ title: Custom Embeds
 order: d
 ---
 
-!!!warning Online Config Editor
-You can edit your config files, using our online config editor at https://editor.firstdark.dev. Alternatively, use the `sdconfigeditor` command in your console to edit your config live on the server, using the web interface.
+!!!warning Online Embed Editor
+You can edit, build and visualize embeds with our new Online Embed Editor, found at https://editor.firstdark.dev/embed_editor
 !!!
 
 Simple Discord Link now allows you to customize the layout of embeds, used for various messages.

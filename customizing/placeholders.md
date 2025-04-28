@@ -24,6 +24,7 @@ These placeholders can be used anywhere. If data for a placeholder is not availa
 | {{game.version}} | Show the current version of the running game                        |
 | {{game.mods}} | Show the amount of mods installed                                   |
 | {{player.name}} | Show the name of the logged in Minecraft Player                     |
+| {{player.uuid}} | Return the UUID of the player. Useful for custom avatar services |
 | |                                                                     |
 | IN GAME ONLY | These variables only resolve while you are in game                  |
 | {{world.name}} | Display the name of the current dimension/world the player is in    |
@@ -50,11 +51,12 @@ These placeholders can be used anywhere. If data for a placeholder is not availa
 
 These placeholders are usable inside image keys
 
-| Variable          | Description        |
-|-------------------|--------------------|
-| {{images.player}} | Player Head        |
-| {{images.realm}} | Realm Icon if any  |
-| {{images.server}} | Server Icon if any |
+| Variable          | Description           |
+|-------------------|-----------------------|
+| {{images.player}} | Player Head           |
+| {{images.head}}   | Isometric Player Head |
+| {{images.realm}}  | Realm Icon if any     |
+| {{images.server}} | Server Icon if any    |
 
 |||
 

@@ -1,0 +1,14 @@
+{
+  "compilerOptions": {
+    "outDir": "plugins",
+    "target": "ES2019",
+    "module": "commonjs",
+    "esModuleInterop": true,
+    "strict": true,
+    "moduleResolution": "node",
+    "skipLibCheck": true,
+    "resolveJsonModule": true,
+    "declaration": true
+  },
+  "include": ["src/plugins/**/*"]
+}

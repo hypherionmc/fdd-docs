@@ -1,0 +1,35 @@
+.badge {
+    padding: 0.2em 0.6em;
+    border-radius: 20px;
+    font-weight: bold;
+    font-size: 0.75em;
+    display: inline-block;
+    margin-right: 0.25em;
+}
+
+.badge.success {
+    background-color: green;
+    border: 0.04rem solid #a6e3a1;
+    color: white;
+}
+.badge.info {
+    background-color: dodgerblue;
+    border: 0.04rem solid aqua;
+    color: white;
+}
+.badge.warning {
+    background-color: orange;
+    border: 0.04rem solid #ffe57f;
+    color: white;
+}
+.badge.danger {
+    background-color: #d20f39;
+    border: 0.04rem solid #f38ba8;
+    color: white;
+}
+
+.badge.secondary {
+    background-color: #6c7086;
+    border: 0.04rem solid darkgray;
+    color: white;
+}

@@ -1,0 +1,22 @@
+.expandBox {
+    background: var(--expand-background-color);
+    border-radius: 0.4rem;
+    padding: .6rem 1rem;
+    margin: 0 0 var(--ifm-spacing-vertical);
+}
+
+.expandHeader {
+    display: flex;
+    align-items: center;
+    align-content: center;
+    gap: 5px;
+    cursor: pointer;
+}
+
+.expandBody {
+    margin-top: 20px;
+}
+
+.bottomBorder {
+    border-bottom: 1px solid var(--ifm-color-emphasis-300);
+}

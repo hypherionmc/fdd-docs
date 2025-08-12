@@ -117,6 +117,10 @@ Currently, Simple Discord Link has built in language files for the following lan
 
 - `en_us` - (English United States)
 - `es_es` - (Spanish) (Submitted by ArkoSammy12).
+- `fr_fr` - (French) (Submitted by DylanDelobel)
+- `pt_br` - (Portuguese) (Submitted by Lacasamiel0406)
+- `zh_tw` - (Traditional Chinese) (Submitted by JamesHAc)
 
 !!!danger
 To use one of the built-in languages, change the `language` field in `simple-discord-link.toml` to the language code given above. You are also welcome to submit translations for your language, to our GitHub repo, so it can be included in the mod.
+!!!

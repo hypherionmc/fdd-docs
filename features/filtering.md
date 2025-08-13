@@ -62,7 +62,7 @@ So now, every message starting with `Hey everyone` or `hey everyone` will not be
 ### Explanation of fields
 
 - `search` -> The text to search for
-- `target` -> Choose between targeting `CHAT`, `USERNAME` or `BOTH`
+- `target` -> Choose between targeting `CHAT`, `USERNAME`, `BOTH`, or `CONSOLE`
 - `replace` -> The text, that will replace `search`, if needed
 - `searchMode` -> How to apply the filter. `CONTAINS`, `STARTS_WITH`, `MATCHES`, `REGEX`
 - `action` -> The action to perform when the filter matches. `IGNORE` or `REPLACE`

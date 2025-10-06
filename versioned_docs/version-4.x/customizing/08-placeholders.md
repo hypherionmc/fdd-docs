@@ -44,7 +44,7 @@ These placeholders are usable inside image keys
 | Variable          | Description           |
 |-------------------|-----------------------|
 | &#123;&#123;images.player&#125;&#125; | Player Head           |
-| &#123;&#123;images.head&#125;&#125;   | Isometric Player Head |
+| &#123;&#123;images.player.head&#125;&#125;   | Isometric Player Head |
 | &#123;&#123;images.realm&#125;&#125;  | Realm Icon if any     |
 | &#123;&#123;images.server&#125;&#125; | Server Icon if any    |
 

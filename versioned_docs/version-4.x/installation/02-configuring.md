@@ -398,7 +398,7 @@ Simple RPC allows for language detection in Minecraft, so If you decide you wann
 To make use of this feature, simply copy your default `simple-rpc.toml` file, using the naming example below.
 
 :::secondary Language Codes
-To find a complete list of lang-codes, check out this site -> https://minecraft.fandom.com/wiki/Languages.
+To find a complete list of lang-codes, check out this site -> https://minecraft.wiki/Languages.
 :::
 
 Once you have created this file, you can change all "state", "description", "largeimagetext" and "smallimagetext" fields. You cannot translate the imageKeys!
